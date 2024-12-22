@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>écrivain public</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+        <script defer src="../javascript/login.js"></script>
+    </head>
+    <body>
+        <form class="loginForm" onsubmit="event.preventDefault(); onSubmit();">
+            <label class="usernameLabel" for="username">Nom d'utilisateur</label>
+            <input class="usernameInput" type="text" id="username" name="username" required>
+            <label class="passwordLabel" for="password">Mot de passe</label>
+            <input class="passwordInput" type="password" id="password" name="password" required>
+            <input type="submit" class="loginButton" value="Se connecter">
+        </form>
+    </body>
+</html>
