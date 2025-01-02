@@ -1,4 +1,4 @@
-const { response } = require("express");
+
 
 var checkbox = document.getElementById('switch');
 getState();
@@ -25,10 +25,8 @@ function switchState() {
         }
     }).then(
         response =>{
-            if(response.status === 200){
-                return response.json();
-            } else {
-                href="/login";
+            if(response.status === 401){
+                location.href="/login";
             }
         }
     );
