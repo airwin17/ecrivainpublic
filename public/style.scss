@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 body{
   font-family: "ubuntu", sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
   height: 100vh;
+  max-width: 1366px;
+  color: #04001C;
+  margin: auto;
 }
 .switchContent{
   display: flex;
@@ -16,7 +20,7 @@ p{
 .switch {
     position: relative;
     display: inline-block;
-    margin: auto 50vh;
+    margin: auto 30px;
     width: 60px;
     height: 34px;
   }
@@ -75,6 +79,60 @@ p{
   .slider.round:before {
     border-radius: 50%;
   }
+.presentation{
+  aspect-ratio: 16/9;
+  max-width: 1366px;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  > img{
+    filter: brightness(50%);
+    height: fit-content;
+    width: 100%;
+  }
+  > div{
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    color: #fff;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    > h1{
+      font-size: 3vw;
+      @media (max-width: 920px){
+        font-size: 4vw;
+      }
+    }
+    > h2{
+      font-size: 2vw;
+      margin-top: 0;
+      font-weight: 400;
+      @media (max-width: 920px){
+        font-size: 3vw;
+      }
+    }
+    > .conversionBut{
+      margin: auto;
+    }
+  }
+  .open{
+    color: green;
+    display: none;
+  }
+  .closed{
+    color: red;
+    display: none;
+  }
+  #status{
+    backdrop-filter: brightness(50%) blur(3px);
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+  
+}
 .loginForm{
   background-color: #fff;
   padding: 20px;
@@ -102,23 +160,135 @@ p{
 .nav{
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  color: #04001C;
   > .navLinks {
     display:flex;
     flex-direction: row;
-    >a{
+    align-items: center;
+    @media (max-width: 980px){
+      display: none;
+    }
+    >.navLink{
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: #04001C;
       text-decoration: none;
-      
+      flex: 1;
+      text-align: center;
+      width: 150px;
+      height: 100%;
+      position: relative;
     }
   }
-  > .conversionBut{
-    background-color: #5439FF;
-    color:#E7E3FF;
-    border: none;
-    border-radius: 10px;
-    padding: 15px 35px;
-    font-size: 20px;
+}
+.conversionBut{
+  background-color: #5439FF;
+  color:#E7E3FF;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 35px;
+  font-size: 20px;
+  width: 150px;
+  margin: 10px;
+}
+.underline {
+  background-color: #5439FF;
+  position: absolute;
+  bottom: 0;
+  border-radius: 10px 10px 0 0;
+}
+.navLink:hover > .underline {
+  background-color: #5439FF;
+  height: 5px;
+  width: 100%;
+}
+#services{
+  background-color: #F1F1F1;
+  height: min-content;
+  max-width: 1366px;
+  width: 100%;
+  display:grid;
+  justify-items: center;
+  
+  > .serviceContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-column: 1/4;
+    > .serviceClass{
+      margin: 10px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      height: 200px;
+      width: 400px;
+      box-shadow: 0px 0px 20px 0px #c9c9c966;
+      > h3{
+        text-align: center;
+      }
+    }
   }
+  > h2{
+    grid-row: 1/2;
+    grid-column: 1/4;
+    text-align: center;
+  }
+}
+#about{
+  height: 400px;
+  display:grid;
+  padding: 10px;
+  align-items: center;
+  @media (max-width: 920px){
+    display: flex;
+    flex-direction: column;
+
+  }
+  .imgContainer{
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    height: 350px;
+    grid-column: 1/2;
+    border-radius: 200px;
+    margin: 20px;
+    > img{
+      height: 200%;
+      width: 200%;
+    }
+  }
+  > p{
+    grid-column: 2/3;
+    margin: 10px;
+  }
+}
+#footer{
+  background-color: #e9e5ff;
+  .footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
+    > div{
+      display: flex;
+      flex-direction: column;
+      > h3{
+        margin: 0;
+      }
+      > ul{
+        margin: 0;
+        padding: 0;
+        > li{
+          margin: 5px;
+        }
+      }
+    }
+  }
+  ul{
+    list-style-type: none;
+  }
+}
+.loginSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
