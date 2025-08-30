@@ -4,7 +4,7 @@ const express = require('express')
 const app=express();
 app.use(express.static( 'public' ));
 //app.use(cors());
-app.use("/api",router);
+
 app.get("/",(req,res)=>{
     res.sendFile(__dirname+'/public/html/home.html');
 })
